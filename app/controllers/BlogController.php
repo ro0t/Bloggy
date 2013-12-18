@@ -14,9 +14,10 @@ class BlogController extends BaseController {
 			$prev = Blog::prev($blog->id);
 		}
 
-		return View::make('blog.index')->with('blog', $blog)
-					->with('prev', $prev)
-					->with('next', $next);
+		$blog->next = $next;
+		$blog->prev = $prev;
+
+		return View::make('blog.index')->with('blog', $blog);
 
 	}
 
@@ -38,9 +39,10 @@ class BlogController extends BaseController {
 			$prev = Blog::prev($blog->id);
 		}
 
-		return View::make('blog.single')->with('blog', $blog)
-					->with('prev', $prev)
-					->with('next', $next);
+		$blog->next = $next;
+		$blog->prev = $prev;
+
+		return View::make('blog.single')->with('blog', $blog);
 
 	}
 
