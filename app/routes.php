@@ -27,10 +27,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 Route::get('blog/{id}', 'BlogController@single');
 Route::get('blog', 'BlogController@index');
 
-Route::get('install', function() {
-	DatabaseInstall::install();
-});
-
 Route::get('login', 'BlogController@login');
 Route::get('logout', 'BlogController@logout');
 Route::post('login', 'BlogController@auth');
