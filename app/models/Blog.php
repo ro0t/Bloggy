@@ -27,7 +27,7 @@ class Blog extends Eloquent {
 
 	public static function post($blog) {
 		if(isset($blog) && $blog != null)
-			return View::make('partials.article')->with('blog', $blog);
+			return View::make('partials.article')->with('blog', $blog)->with('next', $blog->next)->with('prev', $blog->prev);
 		else
 			return View::make('partials.empty');
 	}
