@@ -4,7 +4,6 @@ class BlogController extends BaseController {
 	
 	protected function index() {
 
-		$blog = null;
 		$blog = Blog::take(1)->orderBy('id', true)->first();
 
 		if(isset($blog)) {
@@ -34,6 +33,22 @@ class BlogController extends BaseController {
 
 		return View::make('blog.single')->with('blog', $blog);
 
+	}
+
+	protected function create() {
+		return View::make('blog.create');
+	}
+
+	protected function edit($id) {
+		$blog = Blog::find($id);
+		return View::make('blog.edit')->with('blog', $blog);
+	}
+
+	protected function delete($id) {
+		$blog = Blog::find($id);
+		$blog->delete();
+
+		return Redirect::to('/');
 	}
 
 	protected function login() {

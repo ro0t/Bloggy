@@ -11,17 +11,15 @@
 |
 */
 
-// ennþá að venjast mac lyklaborðinu fuu lolz
+Route::group(array('prefix' => 'api', 'before' => 'auth'), function() {
+	Route::post('create', 'ApiController@create');
+	Route::post('edit/{id}', 'ApiController@edit');
+});
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
-
-	Route::get('/', 'AdminController@index');
-	Route::post('/', 'AdminController@createBlog');
-
-	Route::get('edit/{id}', 'AdminController@edit');
-	Route::post('edit/{id}', 'AdminController@postEdit');
-	Route::get('delete/{id}', 'AdminController@delete');
-
+Route::group(array('before' => 'auth'), function() {
+	Route::get('edit/{id}', 'BlogController@edit');
+	Route::get('delete/{id}', 'BlogController@delete');
+	Route::get('create', 'BlogController@create');
 });
 
 Route::get('blog/{id}', 'BlogController@single');

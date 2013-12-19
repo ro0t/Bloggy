@@ -1,4 +1,5 @@
 		<article>
+			{{ Bloggy::toolbar() }}
 			<hgroup>
 				<h1>No blog posts to be seen here.</h1>
 			</hgroup>
