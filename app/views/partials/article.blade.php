@@ -1,7 +1,5 @@
 <article>
-	@if(Auth::check())
-	<div class="edit"><a href="{{ URL::to('admin/edit/' . $blog->id) }}">Edit</a> &bull; <a href="{{ URL::to('admin/delete/' . $blog->id) }}" onclick="return confirm('Are you sure you want to delete this post?');" >Delete</a></div>
-	@endif
+	{{ Bloggy::toolbar($blog) }}
 	<hgroup>
 		<h1>{{ $blog->title }}</h1>
 	</hgroup>

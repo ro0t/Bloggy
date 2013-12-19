@@ -8,8 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/prettify.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/prettifytheme.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/sublimeScroll.css') }}">
-		<script src="{{ asset('js/jquery.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('js/prettify.js') }}" type="text/javascript"></script>
+		{{ Bloggy::scripts() }}
 		<script src="{{ asset('js/sublimeScroll.js') }}" type="text/javascript"></script>
 		<script type="text/javascript">
         // Only run on browsers that support css transitions
