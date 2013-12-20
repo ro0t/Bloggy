@@ -5,7 +5,7 @@ Bloggy is a web application that aims for simplicity, it's built on Laravel's PH
 What does it include?
 * Two tables, blog & user
 * Simple front end functional blog layout
-* Administration panel to manage your blog posts
+* "Live" Blog editing tools
 
 ## How to install?
 Since it's **still in development**, you will have to compose yourself into the matrix of bloggy, using [composer](http://getcomposer.org/) and do some tweaks to install it and get it up and running.
