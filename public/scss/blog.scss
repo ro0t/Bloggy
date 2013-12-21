@@ -8,6 +8,14 @@ $darkblue: #2c3e50;
 	-o-border-radius: $radius;
 }
 
+@mixin transition($trans) {
+	transition: $trans;
+	-webkit-transition: $trans;
+	-moz-transition: $trans;
+	-o-transition: $trans;
+	-ms-transition: $trans;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -31,8 +39,22 @@ article {
 
 	.edit {
 		position: absolute;
-		top: -20px;
+		top: -40px;
 		right: 0px;
+
+		button {
+			background: $clouds;
+			border: 1px solid #e5e5e5;
+			outline: none;
+			padding: 5px 10px;
+			cursor: pointer;
+			@include border-radius(5px);
+			font-family: sans-serif;
+			font-weight: bold;
+			color: $darkblue;
+			font-size: 12pt;
+		}
+
 	}
 
 	a {
@@ -79,6 +101,7 @@ article {
 
 		a {
 			display: inline-block;
+			text-decoration: none;
 			span {
 				color: #999;
 				margin: 0 10px;
@@ -94,5 +117,52 @@ article {
 		display: inline-block;
 		content: ' ';
 		width: 100%;
+	}
+}
+
+#login {
+	width: 200px;
+	margin:0 auto;
+	background: #343434;
+	position: relative;
+	top: 20%;
+	padding: 20px;
+	@include border-radius(10px);
+	text-align: center;
+	border-bottom: 3px solid #1a1a1a;
+
+	input {
+		display: inline-block;
+		width: 190px;
+		padding: 7px 5px;
+		margin: 5px 0;
+		@include border-radius(5px);
+		outline: none;
+		border: none;
+		font-family: 'Lora', sans-serif;
+		font-size: 12pt;
+		background: #1a1a1a;
+		color: $clouds;
+	}
+
+	button {
+		width: 200px;
+		padding: 7px 5px;
+		font-family: 'Lora', sans-serif;
+		font-size: 12pt;
+		border: none;
+		outline: none;
+		color: $clouds;
+		background: #9b59b6;
+		border-bottom: 2px solid #8e44ad;
+		@include border-radius(5px);
+		margin-top: 10px;
+		cursor: pointer;
+		@include transition(all .3s ease-in);
+	}
+
+	button:hover {
+		background: #8e44ad;
+		border-bottom-color: #9b59b6;
 	}
 }

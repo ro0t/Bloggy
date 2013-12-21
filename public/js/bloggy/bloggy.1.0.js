@@ -77,7 +77,7 @@ $(function() {
 
 		api('/api/edit/' + $id, 'post', { title: $title, content: $content }, function(data) {
 			if(data.response)
-				window.location = '/blog/' + $id;
+				window.location = '/blog/' + data.id;
 			else
 				console.log(data.message);
 		});

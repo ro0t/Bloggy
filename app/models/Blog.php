@@ -27,20 +27,20 @@ class Blog extends Eloquent {
 
 	public static function post($blog) {
 		if($blog != null)
-			return View::make('partials.article')->with('blog', $blog)->with('next', $blog->next)->with('prev', $blog->prev);
+			return View::make('partials.post')->with('blog', $blog)->with('next', $blog->next)->with('prev', $blog->prev);
 		else
 			return View::make('partials.empty');
 	}
 
 	public static function edit($blog) {
 		if(isset($blog) && $blog != null)
-			return View::make('partials.editable')->with('blog', $blog);
+			return View::make('partials.edit')->with('blog', $blog);
 		else
 			return View::make('partials.empty');
 	}
 
 	public static function craft() {
-		return View::make('partials.write');
+		return View::make('partials.craft');
 	}
 
 }

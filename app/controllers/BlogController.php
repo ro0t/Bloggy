@@ -36,10 +36,12 @@ class BlogController extends BaseController {
 	}
 
 	protected function create() {
+		Config::set('bloggy.sublimeScroll', false);
 		return View::make('blog.create');
 	}
 
 	protected function edit($id) {
+		Config::set('bloggy.sublimeScroll', false);
 		$blog = Blog::find($id);
 		return View::make('blog.edit')->with('blog', $blog);
 	}
@@ -52,6 +54,7 @@ class BlogController extends BaseController {
 	}
 
 	protected function login() {
+		Config::set('bloggy.sublimeScroll', false);
 		return View::make('blog.login');
 	}
 
@@ -59,7 +62,7 @@ class BlogController extends BaseController {
 		$data = Input::all();
 
 		Auth::attempt(array('username' => $data['username'], 'password' => $data['password']));
-		return Redirect::to('admin');
+		return Redirect::to('/');
 
 	}
 

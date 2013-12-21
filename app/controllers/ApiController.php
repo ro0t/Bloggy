@@ -7,14 +7,13 @@ class ApiController extends Controller {
 		$data = Bloggy::post();
 		$data['slug'] = Str::slug($data['title']);
 
-		$attempt = Blog::create($data);
-
-		if(isset($attempt->id)) {
-			return Bloggy::json(true, $attempt->id);
-		} else {
-			return Bloggy::json(false, 'Failed creating your blog post.');
+		try {
+			$attempt = Blog::create($data);
+			return Bloggy::json(true, $attempt->slug);
+		} catch(Exception $e) {
+			return Bloggy::json(false, $e);
 		}
-
+		
 	}
 
 	protected function edit($id) {
@@ -29,7 +28,7 @@ class ApiController extends Controller {
 			$blog->content = $data['content'];
 
 			if($blog->save()) {
-				return Bloggy::json(true);
+				return Bloggy::json(true, $blog->slug);
 			} else {
 				return Bloggy::json(false, 'Unable to edit this blog item.');
 			}
