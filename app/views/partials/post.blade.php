@@ -1,8 +1,8 @@
 <article>
-	{{ Bloggy::toolbar($blog) }}
 	<hgroup>
 		<h1>{{ $blog->title }}</h1>
 	</hgroup>
+	<div class="bloggy-hr two"><div class="first"></div><div class="second"></div><div class="third"></div><div class="fourth"></div></div>
 	<section id="content">
 		{{ $blog->content }}
 	</section>

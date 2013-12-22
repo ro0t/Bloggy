@@ -2,7 +2,9 @@
 
 return array(
 	
-	'defaultTitle' => 'Welcome to a very Bloggy website!',
-	'sublimeScroll' => true,
+	'website' => array(
+		'name' => 'Bloggy',
+		'title' => 'Welcome to a very Bloggy website!'
+	),
 
 );

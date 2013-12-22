@@ -3,7 +3,7 @@
 class BaseController extends Controller {
 
 	public function __construct() {
-		self::title(Config::get('bloggy.defaultTitle'));
+		self::title(Config::get('bloggy.website.title'));
 	}
 
 	public static function title($title) {
