@@ -47,6 +47,15 @@ header#head {
 	background: $darkblue;
 	height: 55px;
 
+	a.website {
+		display: block;
+		font-weight: bold;
+		font-size: 14pt;
+		color: $clouds;
+		padding: 11px;
+		text-decoration: none;
+	}
+
 	.edit {
 		position: absolute;
 		height: 50px;

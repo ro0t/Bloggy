@@ -13,6 +13,7 @@
 	<body>
 		<header id="head">
 			<div class="bloggy-hr five"><div class="first"></div><div class="second"></div><div class="third"></div><div class="fourth"></div></div>
+			<a href="{{ URL::to('/') }}" class="website">{{ Config::get('bloggy.website.name') }}</a>
 			{{ Bloggy::toolbar((isset($blog)) ? $blog : null) }}
 		</header>
 		@yield('content')
