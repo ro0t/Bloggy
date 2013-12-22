@@ -144,6 +144,26 @@ article {
 	top: 100px;
 	margin:0 auto;
 
+	.edit {
+		position: absolute;
+		top: -40px;
+		right: 0;
+
+		button {
+			background: $clouds;
+			border: 1px solid #e5e5e5;
+			outline: none;
+			padding: 5px 10px;
+			cursor: pointer;
+			@include border-radius(5px);
+			font-family: sans-serif;
+			font-weight: bold;
+			color: $darkblue;
+			font-size: 12pt;
+		}
+
+	}
+
 	a {
 		color: $darkblue;
 		text-decoration: none;
