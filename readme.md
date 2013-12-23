@@ -7,6 +7,12 @@ What does it include?
 * Simple front end functional blog layout
 * "Live" Blog editing tools
 
+How's the TODO List coming?
+* We need an admin interface for user control & selection of themes
+* Themes
+* Settings table
+* Better installer
+
 ## How to install?
 Since it's **still in development**, you will have to compose yourself into the matrix of bloggy, using [composer](http://getcomposer.org/) and do some tweaks to install it and get it up and running.
 
