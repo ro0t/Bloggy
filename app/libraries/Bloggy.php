@@ -31,4 +31,11 @@ class Bloggy {
 		return json_encode($json);
 	}
 
+	public static function theme() {
+
+		$theme = Config::get('bloggy.theme');
+		return ($theme != 'default' && $theme != null) ? $theme : 'default';
+	
+	}
+
 }

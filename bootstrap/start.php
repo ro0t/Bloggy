@@ -60,6 +60,23 @@ require $framework.'/Illuminate/Foundation/start.php';
 
 /*
 |--------------------------------------------------------------------------
+| Bloggy theme manager
+|--------------------------------------------------------------------------
+|
+| Enables theme selecting, requires View::make to be prefixed by the theme 
+| name, followed by '::'.
+|
+| Ex: themename::view.name
+|
+*/
+$theme = Config::get('bloggy.theme');
+
+if($theme != 'default' && $theme != null) {
+	Config::set('view.paths', array(base_path() . '/themes/' . $theme . '/views'));
+}
+
+/*
+|--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
 |
