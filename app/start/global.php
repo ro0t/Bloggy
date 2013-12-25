@@ -79,3 +79,20 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require all function files
+|--------------------------------------------------------------------------
+|
+| Require all function files that are provided in the bloggy functions 
+| config section.
+|
+*/
+
+Bloggy::preload(function() {
+	foreach(Config::get('bloggy.functions') as $file) {
+		if(File::exists(($path = app_path() . '/libraries/functions/' . $file . '.php'))) 
+			require $path;
+	}
+});

@@ -54,4 +54,15 @@ return array(
 
 	'storage' => __DIR__.'/../app/storage',
 
+	/*
+	|--------------------------------------------------------------------------
+	| Themes Path
+	|--------------------------------------------------------------------------
+	|
+	| The theme path is the root for all custom Bloggy themes.
+	|
+	*/
+
+	'theme' => __DIR__.'/../themes',
+
 );

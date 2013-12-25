@@ -2,6 +2,10 @@
 
 class Bloggy {
 	
+	public static function preload($function) {
+		$function();
+	}
+
 	public static function scripts() {
 		return View::make('partials.scripts');
 	}
@@ -36,6 +40,36 @@ class Bloggy {
 		$theme = Config::get('bloggy.theme');
 		return ($theme != 'default' && $theme != null) ? $theme : 'default';
 	
+	}
+
+	public static function asset($file) {
+
+		$path = base_path() . '/themes/' . Config::get('bloggy.theme') . '/public/' . $file;
+
+		if(file_exists($path)) {
+			return asset('asset/' . $file);
+		} else {
+			return asset($file);
+		}
+
+	}
+
+	public static function output($path) {
+		
+		$path = base_path() . '/themes/' . Config::get('bloggy.theme') . '/public/' . $path;
+
+		if(File::exists($path)) {
+
+			$mime = mimetype($path);
+			
+			$response = Response::make(file_get_contents($path), 200);
+			$response->header('Content-Type', $mime);
+
+			return $response;
+		}
+
+		return App::abort('404');
+
 	}
 
 }

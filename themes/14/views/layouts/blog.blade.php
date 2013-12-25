@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<title>{{ Config::get('bloggy.website.name') }} | {{ Session::get('title') }}</title>
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/blog.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/prettify.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/prettifytheme.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ Bloggy::asset('css/blog.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ Bloggy::asset('css/prettify.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ Bloggy::asset('css/prettifytheme.css') }}">
 		{{ Bloggy::scripts() }}
 		@yield('head')
 	</head>

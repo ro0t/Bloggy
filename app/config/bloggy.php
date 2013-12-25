@@ -9,4 +9,8 @@ return array(
 
 	'theme' => '14',		// Set to default or null to load the default theme
 
+	'functions' => array(
+		'mimetype',
+	),
+
 );

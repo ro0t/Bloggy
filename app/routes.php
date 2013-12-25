@@ -11,6 +11,10 @@
 |
 */
 
+Route::any('asset/{path?}', function($path) {
+	return Bloggy::output($path);
+})->where('path', '.+');
+
 Route::group(array('prefix' => 'api', 'before' => 'auth'), function() {
 	Route::post('create', 'ApiController@create');
 	Route::post('edit/{id}', 'ApiController@edit');
