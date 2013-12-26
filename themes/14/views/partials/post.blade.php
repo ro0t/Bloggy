@@ -1,6 +1,6 @@
 <article>
 	<hgroup>
-		<h1>{{ $blog->title }}</h1>
+		<a href="{{ URL::to('blog/' . $blog->slug) }}"><h1>{{ $blog->title }}</h1></a>
 	</hgroup>
 	<div class="bloggy-hr two"><div class="first"></div><div class="second"></div><div class="third"></div><div class="fourth"></div></div>
 	<section id="content">

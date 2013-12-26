@@ -17,12 +17,11 @@
 				<div class="image" style="background: url({{ Bloggy::asset('images/adam.jpg') }})"></div>
 			</div>
 			<a href="{{ URL::to('/') }}" class="website">Bloggy 14</a>
+			<br />
 			<a href="{{ URL::to('/') }}" class="slogan">Welcome to my blog</a>
 			{{ Bloggy::toolbar((isset($blog)) ? $blog : null) }}
 		</header>
 		<section id="page">
-			<div class="bloggy-hr top"><div class="first"></div><div class="second"></div><div class="third"></div><div class="fourth"></div></div>
-			<div class="bloggy-hr bottom"><div class="first"></div><div class="second"></div><div class="third"></div><div class="fourth"></div></div>
 			@yield('content')
 		</section>
 		<footer id="feet">

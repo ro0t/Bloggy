@@ -60,6 +60,7 @@ section#parallax {
 	top:0;
 	left:0;
 	z-index: -1;
+	@include transition(all 3s ease-in);
 }
 
 .bloggy-hr {
@@ -126,7 +127,7 @@ header#head {
 	}
 
 	a.website, a.slogan {
-		display: block;
+		display: inline;
 		color: $white;
 		text-decoration: none;
 		margin-top: 10px;
@@ -139,7 +140,7 @@ header#head {
 		margin-top: 0;
 		font-size: 16pt;
 		font-weight: 700;
-		color: rgba(255, 255, 255, .1);
+		color: rgba(255, 255, 255, .3);
 	}
 
 	.edit {
@@ -180,16 +181,7 @@ section#page {
 	background: $lightgray;
 	width: 100%;
 	padding: 50px 0;
-
-	.bloggy-hr.top {
-		position: absolute;
-		top: -5px;
-	}
-
-	.bloggy-hr.bottom {
-		position: absolute;
-		bottom: -5px;
-	}
+	outline: 3px solid rgba(255, 255, 255, .1);
 
 	article {
 		width: 700px;
@@ -198,6 +190,10 @@ section#page {
 		@include Lora;
 		position: relative;
 		text-align: justify;
+		background: #fff;
+		padding: 25px;
+		@include border-radius(5px);
+		border: 1px solid #e5e5e5;
 
 		.bloggy-hr {
 			height: 2px;
@@ -226,29 +222,31 @@ section#page {
 			}
 		}
 
-		h1 {
-			color: $darkblue;
-			font-size: 32pt;
+		hgroup {
+			h1, a {
+				color: $darkblue;
+				font-size: 32pt;
+				margin-top: 0;
+				text-decoration: none;
+			}
 		}
+		
 
 		a {
 			text-decoration: none;
 		}
 
-		a:nth-child(1n) {
-			color: $yellow;
-		}
+		#content {
+			margin-top: 15px;
 
-		a:nth-child(2n) {
-			color: $green;
-		}
+			a {
+				color: $blue;
+			}
 
-		a:nth-child(3n) {
-			color: $red;
-		}
+			a:hover {
+				border-bottom: 1px dotted $red;
+			}
 
-		a:nth-child(4n) {
-			color: $blue;
 		}
 
 		footer {
@@ -257,7 +255,8 @@ section#page {
 			padding-top: 15px;
 			border-top: 1px solid rgba(0,0,0,.1);
 			position: relative;
-		
+			padding-bottom: 15px;
+
 			a {
 				color: $blue !important;
 				position: absolute;
