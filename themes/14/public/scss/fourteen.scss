@@ -1,0 +1,338 @@
+$white: #fff;
+$lightgray: #f9f9f9;
+$gray: #222;
+
+$yellow: #e5ce8d;
+$green: #5bd999;
+$red: #e6567a;
+$blue: #00c0e4;
+$darkblue: #343d4a;
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin transition($trans) {
+	-webkit-transition: $trans;
+	-moz-transition: $trans;
+	-ms-transition: $trans;
+	-o-transition: $trans;
+	transition: $trans;
+}
+
+@mixin OpenSansCondensed {
+	font-family: 'Open Sans Condensed';
+	font-weight: 300;
+}
+
+@mixin Lora {
+	font-family: 'Lora';
+	font-weight: 400;
+}
+
+::selection
+{
+	color: $white;
+	background: rgba(0,0,0,.7);
+}
+::-moz-selection
+{
+	color: $white;
+	background: rgba(0,0,0,.7);
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+section#parallax {
+	background: url(../images/background.jpg) no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: -1;
+}
+
+.bloggy-hr {
+	width: 100%;
+	background: transparent;
+	position: relative;
+	height: 5px;
+	z-index: 1;
+
+	div {
+		width: 25%;
+		display: inline-block;
+		margin:0;
+		padding:0;
+		height: inherit;
+		position: absolute;
+		top: 0;
+	}
+
+	.first {
+		background: $yellow;
+		left: 0;
+	}
+
+	.second {
+		background: $red;
+		left: 25%;
+	}
+
+	.third {
+		background: $green;
+		left: 50%;
+	}
+
+	.fourth {
+		background: $blue;
+		left: 75%;
+	}
+}
+
+header#head {
+	padding: 60px;
+	height: 180px;
+	text-align: center;
+	position: relative;
+
+	.image-circle {
+		width: 126px;
+		height: 126px;
+		@include border-radius(126px);
+		background: rgba(255, 255, 255, 0.05);
+		margin: 0 auto;
+		position: relative;
+
+		.image {
+			width: 124px;
+			height: 124px;
+			background-size: cover;
+			@include border-radius(124px);
+			position: relative;
+			top: 1px;
+			left: 1px;
+		}
+	}
+
+	a.website, a.slogan {
+		display: block;
+		color: $white;
+		text-decoration: none;
+		margin-top: 10px;
+		font-size: 20pt;
+		@include OpenSansCondensed;
+		font-weight: 300;
+	}
+
+	a.slogan {
+		margin-top: 0;
+		font-size: 16pt;
+		font-weight: 700;
+		color: rgba(255, 255, 255, .1);
+	}
+
+	.edit {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 999;
+
+		a {
+			font-size: 14pt;
+			color: $white;
+			text-decoration: none;
+			padding: 10px;
+			margin: 0 5px;
+			@include transition(all .3s ease-in);
+		}
+
+		a:nth-child(1n):hover {
+			color: $yellow;
+		}
+
+		a:nth-child(2n):hover {
+			color: $green;
+		}
+
+		a:nth-child(3n):hover {
+			color: $red;
+		}
+
+		a:nth-child(4n):hover {
+			color: $blue;
+		}
+	}
+}
+
+section#page {
+	position: relative;
+	background: $lightgray;
+	width: 100%;
+	padding: 50px 0;
+
+	.bloggy-hr.top {
+		position: absolute;
+		top: -5px;
+	}
+
+	.bloggy-hr.bottom {
+		position: absolute;
+		bottom: -5px;
+	}
+
+	article {
+		width: 700px;
+		margin:0 auto;
+		color: $gray;
+		@include Lora;
+		position: relative;
+		text-align: justify;
+
+		.bloggy-hr {
+			height: 2px;
+		}
+
+		.edit {
+			position: absolute;
+			top: -45px;
+			right: 0;
+			
+			button {
+				cursor: pointer;
+				background: $blue;
+				padding: 10px 25px;
+				outline: none;
+				border: none;
+				@include border-radius(5px);
+				color: $white;
+				@include transition(all .3s ease-in);
+				font-family: sans-serif;
+				font-weight: normal;
+			}
+
+			button:hover {
+				background: $red;
+			}
+		}
+
+		h1 {
+			color: $darkblue;
+			font-size: 32pt;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:nth-child(1n) {
+			color: $yellow;
+		}
+
+		a:nth-child(2n) {
+			color: $green;
+		}
+
+		a:nth-child(3n) {
+			color: $red;
+		}
+
+		a:nth-child(4n) {
+			color: $blue;
+		}
+
+		footer {
+			width: 100%;
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px solid rgba(0,0,0,.1);
+			position: relative;
+		
+			a {
+				color: $blue !important;
+				position: absolute;
+				top: 15px;
+
+				span {
+					margin: 0 5px;
+					color: $red;
+				}
+			}
+
+			a.next {
+				right: 0;
+			}
+
+			a.prev {
+				left: 0;
+			}
+		}
+	}
+
+	#login {
+		width: 200px;
+		margin:0 auto;
+		text-align: center;
+
+		h3 {
+			@include OpenSansCondensed;
+			font-weight: 700;
+			color: $green;
+		}
+
+		input {
+			background: transparent;
+			border: 2px solid $yellow;
+			color: $yellow;
+			margin-left: -10px;
+			margin-bottom: 10px;
+			padding: 10px;
+			@include border-radius(5px);
+		}
+
+		button {
+			cursor: pointer;
+			background: $blue;
+			padding: 10px 25px;
+			outline: none;
+			border: none;
+			@include border-radius(5px);
+			color: $white;
+			@include transition(all .3s ease-in);
+		}
+
+		button:hover {
+			background: $red;
+		}
+	}
+}
+
+footer#feet {
+	padding: 100px 0;
+	width: 100%;
+
+	a.poweredBy {
+		display: block;
+		background: url(../images/bloggy.png) no-repeat;
+		width: 157px;
+		height: 23px;
+		margin:0 auto;
+		opacity: .7;
+		text-decoration: none;
+		@include transition(all .3s ease-in);
+	}
+
+	a.poweredBy:hover {
+		opacity: 1;
+	}
+}

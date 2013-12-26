@@ -8,10 +8,10 @@
 	</section>
 	<footer>
 		@if(isset($prev))
-		<a href="{{ URL::to('blog/' . (isset($prev->slug) ? $prev->slug : $prev->id)) }}">Prev<span>{{ $prev->title }}</span></a>
+		<a class="prev" href="{{ URL::to('blog/' . (isset($prev->slug) ? $prev->slug : $prev->id)) }}">Prev<span>{{ $prev->title }}</span></a>
 		@endif
 		@if(isset($next))
-		<a href="{{ URL::to('blog/' . (isset($next->slug) ? $next->slug : $next->id)) }}"><span>{{ $next->title }}</span>Next</a>
+		<a class="next" href="{{ URL::to('blog/' . (isset($next->slug) ? $next->slug : $next->id)) }}"><span>{{ $next->title }}</span>Next</a>
 		@endif
 	</footer>
 </article>
